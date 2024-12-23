@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.jop.learncompose"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.jop.learncompose"
@@ -63,11 +63,15 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
 
+    implementation(libs.androidx.navigation)
+
     // DEPENDENCIES INJECTION
+    implementation(libs.androidx.hilt)
     implementation(libs.dagger.hilt)
     ksp(libs.dagger.hilt.compiler)
 
     // ROOM
+    implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room)
     ksp(libs.androidx.room.compiler)
 
