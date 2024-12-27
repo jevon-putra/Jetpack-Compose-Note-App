@@ -2,10 +2,10 @@ package com.jop.learncompose
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.jop.learncompose.data.repositories.NoteRepository
-import com.jop.learncompose.local.LocalDatabase
-import com.jop.learncompose.local.dao.NoteDao
+import com.jop.learncompose.data.local.LocalDatabase
+import com.jop.learncompose.data.local.dao.NoteDao
+import com.jop.learncompose.data.AppData
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,5 +31,10 @@ object AppModule {
     @Provides
     fun provideNoteRepository(noteDao: NoteDao): NoteRepository {
         return NoteRepository(noteDao)
+    }
+
+    @Provides
+    fun provideAppData(@ApplicationContext context: Context): AppData {
+        return AppData(context)
     }
 }
