@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.compose)
     alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.ksp)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -12,7 +13,7 @@ android {
 
     defaultConfig {
         applicationId = "com.jop.learncompose"
-        minSdk = 25
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -64,6 +65,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.androidx.navigation)
+    implementation(libs.androidx.ui.text.google.fonts)
 
     // DEPENDENCIES INJECTION
     implementation(libs.androidx.hilt)
@@ -71,7 +73,6 @@ dependencies {
     ksp(libs.dagger.hilt.compiler)
 
     // ROOM
-    implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room)
     ksp(libs.androidx.room.compiler)
 
